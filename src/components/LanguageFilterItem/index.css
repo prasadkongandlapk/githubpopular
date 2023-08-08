@@ -1,0 +1,22 @@
+.language {
+  font-weight: bold;
+  margin-right: 20px;
+}
+.btn {
+  background-color: transparent;
+  border-style: none;
+}
+.identifyBtn {
+  color: #0284c7;
+  border-color: #0284c7;
+  border-radius: 10px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  padding-left: 20px;
+  margin-top: 7px;
+  margin-right: 25px;
+}
