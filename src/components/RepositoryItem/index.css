@@ -1,1 +1,24 @@
-/* Write your CSS here */
+.jdfskla {
+  height: 70px;
+  width: 70px;
+}
+.repo-bg {
+  margin: 10px;
+}
+.h1 {
+  font-family: 'roboto';
+  color: rgb(153, 47, 126);
+}
+.kfd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 35px;
+  margin-bottom: 10px;
+}
+.jdfsklaa {
+  height: 15px;
+  margin-top: 16px;
+  margin-right: 20px;
+  width: 15px;
+}

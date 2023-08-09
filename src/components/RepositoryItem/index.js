@@ -1,42 +1,39 @@
 import './index.css'
-import {Component} from 'react'
 
-class RepositoryItem extends Component {
-  state = {newData: ''}
-
-  componentDidMount() {
-    this.getData()
-  }
-
-  getData = async () => {
-    const {activeId} = this.props
-    const url = 'https://apis.ccbp.in/popular-repos'
-
-    const options = {
-      method: 'GET',
-    }
-    const response = await fetch(`${url}?language=${activeId}`, options)
-    const data = await response.json()
-    const popularRepos = data.popular_repos
-    const formatedData = popularRepos.map(each => ({
-      name: each.name,
-      id: each.id,
-      issuesCount: each.issues_count,
-      forksCount: each.forks_count,
-      starsCount: each.stars_count,
-      avatarUrl: each.avatar_url,
-    }))
-    this.setState({newData: formatedData})
-  }
-
-  render() {
-    const {newData} = this.state
-    const {avatarUrl} = newData
-    return (
-      <div className="repo-bg">
-        <img src={avatarUrl} alt="dsfkj" />
+const RepositoryItem = props => {
+  const {languageDetails} = props
+  const {issuesCount, starsCount, forksCount, name, avatarUrl} = languageDetails
+  return (
+    <div className="repo-bg">
+      <div>
+        <img className="jdfskla" src={avatarUrl} alt={name} />
+        <h3 className="h1">{name}</h3>
+        <div className="kfd">
+          <img
+            className="jdfsklaa"
+            src="https://assets.ccbp.in/frontend/react-js/stars-count-img.png"
+            alt="stars"
+          />
+          <p>{issuesCount}</p>
+        </div>
+        <div className="kfd">
+          <img
+            className="jdfsklaa"
+            src="https://assets.ccbp.in/frontend/react-js/forks-count-img.png"
+            alt="forks"
+          />
+          <p>{forksCount}</p>
+        </div>
+        <div className="kfd">
+          <img
+            className="jdfsklaa"
+            src="https://assets.ccbp.in/frontend/react-js/issues-count-img.png"
+            alt="open issues"
+          />
+          <p>{starsCount}</p>
+        </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 export default RepositoryItem
