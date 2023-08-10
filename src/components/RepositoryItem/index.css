@@ -4,6 +4,12 @@
 }
 .repo-bg {
   margin: 10px;
+  background-color: rgb(253, 241, 241);
+  padding: 20px;
+  font-size: 10px;
+}
+li {
+  list-style: none;
 }
 .h1 {
   font-family: 'roboto';
@@ -12,13 +18,14 @@
 .kfd {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   height: 35px;
   margin-bottom: 10px;
+  height: 10px;
 }
 .jdfsklaa {
-  height: 15px;
-  margin-top: 16px;
+  height: 10px;
+  margin-top: 10px;
   margin-right: 20px;
-  width: 15px;
+  width: 10p;
 }

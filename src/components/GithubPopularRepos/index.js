@@ -27,12 +27,15 @@ class GithubPopularRepos extends Component {
 
   getData = async () => {
     const {activeId} = this.state
-    const url = 'https://apis.ccbp.in/popular-repos'
+    const githubReposApiUrl = 'https://apis.ccbp.in/popular-repos'
 
     const options = {
       method: 'GET',
     }
-    const response = await fetch(`${url}?language=${activeId}`, options)
+    const response = await fetch(
+      `${githubReposApiUrl}?language=${activeId}`,
+      options,
+    )
     const data = await response.json()
     if (response.ok) {
       const popularRepos = data.popular_repos
@@ -53,7 +56,7 @@ class GithubPopularRepos extends Component {
   }
 
   onClickLng = id => {
-    this.setState({activeId: id})
+    this.setState({activeId: id, isLoading: true}, this.getData)
   }
 
   renderRepos = () => {
@@ -99,7 +102,9 @@ class GithubPopularRepos extends Component {
           ))}
         </ul>
         {isLoading ? (
-          <Loader type="ThreeDots" color="#0284c7" height={80} width={80} />
+          <div data-testid="loader">
+            <Loader type="ThreeDots" color="#0284c7" height={80} width={80} />
+          </div>
         ) : (
           this.renderRepos()
         )}

@@ -10,11 +10,11 @@ const LanguageFilterItem = props => {
   const activeBtn = isActive ? 'identifyBtn' : 'btn'
 
   return (
-    <div className="languages-bg">
+    <li className="languages-bg">
       <button onClick={onClickLanguage} className={activeBtn} type="button">
         <p className="language">{language}</p>
       </button>
-    </div>
+    </li>
   )
 }
 
